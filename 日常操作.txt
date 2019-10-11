@@ -1,0 +1,202 @@
+dos中：start /affinity 3 进程名称 		设置win核亲和力
+rz -e 				上传文件至linux
+cat /root/.mysql_secret		查看linux安装mysql初始密码
+[Ctrl + p], [Ctrl + n]			历史命令搜索操作快捷键
+apache-tomcat-7.0.73
+cd /etc/yum.repos.d/		yum源
+http://192.168.123.201:8080/		tomcat
+jps				查看java进程号
+C:\Windows\System32\drivers\etc	主机映射地址
+ date '+%Y-%m-%d %H:%M:%S'	查看日期
+cat grep.txt | grep -v '^$' | grep -v '^#' 	去掉代码中的空行和注释行
+sed -e 's/\x01/,/g' +文件名		分隔\x01符替换为，
+
+eclipse自动生成返回值对象的那一行的末尾（注意一定要将光标点到最后），按Alt+Shift+L；
+eclipse	选中目标代码 按Alt+Shift+L    自动 try catch
+
+json可视化工具---------json viewer
+
+windows快速重启	开打任务管理器 关闭explorer.exe进程 左上角文件---运行新任务---输入explorer
+===============================================================
+hadoop克隆多个虚拟机配置：
+	vi /etc/sysconfig/network-scripts/ifcfg-eth0  编辑网卡配置文件
+	vi /etc/sysconfig/network  		修改主机名 
+	vi /etc/sudoers 			配置用户 sudoer 权限 
+	useradd 用户名			添加用户
+	passwd 用户名			添加用户密码
+	userdel -r 用户名			删除用户
+	cat/etc/passwd 			查看用户信息
+	cat/etc/group			查看组信息
+	chkconfig iptables off 		关闭防火墙开机启动
+	vi /etc/hosts			添加内网域名映射
+	vim /etc/selinux/config 		关闭 Selinux：
+	修改配置文件中的 SELINUX=disabled 
+
+ssm免密登录：
+	hadoop用户家目录下：
+		ssh-keygen
+		ssh-copy-id hadoop02
+		ssh-copy-id hadoop03
+		ssh-copy-id hadoop04
+		ssh-copy-id hadoop05
+
+ scp  -r  hadoop-2.6.4  hadoop02:$PWD 	向hadoop02主机远程传文件到相同目录（$PWD为相同目录的意思） 
+
+同步时间：
+	先查看时区
+	date -R
+	修改时区：
+	（将Asia/shanghai-上海时区写入当前时区）#cp -f /usr/share/zoneinfo/Asia/Shanghai     /etc/localtime
+	提示是否覆盖,输入Y回车
+
+	crontab ： 每隔一段时间执行一次
+		[root@linux01 ~] # crontab -e  
+		[root@linux01 ~] # crontab -e -u root  
+		*/10 * * * * ntpdate 202.120.2.101
+编辑定时任务：
+
+		1、crontab -e -u root
+		2、vi /var/spool/cron/root
+
+查看定时任务： crontab -l
+
+datanode新节点添加网址：https://www.cnblogs.com/unpro-mercy/p/11556467.html
+=================================================================================
+工作中最常用的命令组合：
+	tail -f  文件名		//实时查看文件追加的新内容
+	rm -rf  /root/data/
+	netstat -nltp
+	tar -zxvf shuzhi.tar.gz
+	tar -zxvf apache-hive-1.2.1-bin.tar.gz -C apps/ 
+	rpm -ivh MySQL-server-5.6.26-1.linux_glibc2.5.x86_64.rpm
+===================================================================================
+问题：
+linux中导入txt表到mysql：             在linux中创建.sql文件的将表复制进去，用命令在mysql>source +.sql文件的路径 ？？
+			先在navicate1中创建表 再load data infile '/home/sam/people.txt' into table person; 或者在navicate中导入txt文件
+1查看数据库编码格式：
+show variables like 'character%';
+2查看数据库表的编码：
+show create table <表名>;
+3 修改数据库的编码：
+alter database <数据库名> character set utf8;
+4 修改数据库某表的编码：
+alter table <表名> character set utf8;
+5 修改数据库某表的某一字段的编码：
+alter table <表名> change <字段名> <字段名> <类型> character set utf8;
+========================================================================================
+
+
+问题：
+修改ip地址后重启服务网络报错：“The connection is not for this device.”
+解决网址：https://www.cnblogs.com/yinzhengjie/p/8439826.html
+mv /etc/sysconfig/network-scripts/ifcfg-eth0   /etc/sysconfig/network-scripts/ifcfg-eth1
+
+问题：
+克隆CentOS的虚拟机网卡eth0变成eth1的解决办法
+修改 vim /etc/udev/rules.d/70-persistent-net.rules 文件，
+配置ifcfg-eth0 
+将eth0那行删除，并将name由eth1改为eth0，
+vim /etc/sysconfig/network-scripts/ifcfg-eth0 -----> 替换 HWaddr 和IPADDR
+重启网络服务	service network restart
+解决网址：https://www.jianshu.com/p/e4dc72d0ddda
+
+======================================================================s===================
+hive服务后台启动命令 bin/：nohup hiveserver2 1>/home/hadoop/hive.log 2>&1 &
+		   bin/:  nohup hiveserver2 1>/dev/null 2>/dev/null &	(不要日志了)  /home/hadoop/apps/apache-hive-1.2.1-bin/bin
+		nohup /home/hadoop/apps/apache-hive-1.2.1-bin/bin/hiveserver2 1>/dev/null 2>/dev/null &
+
+执行后台hive命令	 ：beeline
+连接jdbc服务：	 :   !connect jdbc:hive2://hadoop04:10000
+用户名+密码	 ： hadoop
+
+启动客户端直接连接： ：beeline -u jdbc:hive2://hadoop04:10000 -n hadoop	(直接登陆)
+		/home/hadoop/apps/apache-hive-1.2.1-bin/bin/beeline -u jdbc:hive2://hadoop04:10000 -n hadoop
+
+hive内置函数：
+
+row_number()函数
+
+ROW_NUMBER() OVER(PARTITION BY COLUMN1 ORDER BY COLUMN2)
+
+select id,name,age,sex,department,row_number() over(partition by sex order by age) from student;
+编号字段名：row_number_window_0 可重命名为rank
+create table student_111 as select id,name,age,sex,department,row_number() over(partition by sex order by age) from student.;
+取两个sex中age最小的：
+select a.id,a.name,a.age,a.sex,a.department from (select id,name,age,sex,department,row_number() over(partition by sex order by age) from student) a 
+where a.row_number_window_0 = 1; 
+
+collect_set()函数
+
+select sid,collect_set(class_id)[0] from table1 group by sid;
+select department,collect_set(name)[0],collect_set(age)[1] from student group by department;
+
+================================================================================================
+sqoop问题
+报错： Access denied for user 'root'@'hadoopha01' (using password: YES)
+解决：增加远程登陆权限
+mysql>GRANT ALL PRIVILEGES ON *.* TO 'mysql用户名'@'主机名/IP地址' IDENTIFIED BY 'mysql密码' WITH GRANT OPTION;
+mysql>FLUSH PRIVILEGES;
+
+grant all privileges on *.* to root@'%' identified by 'root';
+grant all privileges on *.* to root@'hadoopha01' identified by 'root';
+flush privileges;
+================================================================================
+1、先生成时区配置文件 Asia/Shanghai，用交互式命令 tzselect 即可
+2、拷贝该时区文件，覆盖系统本地时区配置Stay hungry Stay foolish -- http://blog.csdn.net/zhongqi2513
+sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+===================================================================================
+SVN : 项目版本管理工具，  便于协同作战
+maven ： 项目管理工具（组织形式上）    POM ： Project Object Model
+
+	说明了一点：maven管理项目比原生的方式要好
+
+	好在哪里：暂时没有学过，不清楚
+	原生的方式的缺点：
+	1、jar包的管理非常不方便
+	2、原来的项目的移植不方便
+	IDEA  NETBEAN ..... 
+
+	3、原生的项目不便于扩展与维护
+		利用maven让部分依赖性不强的代码可以独立出来成为一个新的项目
+		但是同时，原来的项目也依然能够使用该模块的代码
+
+	原来的项目可以进行分散开发，并且也可以通过POM 去进行组装
+
+	不管是否能够独立运行，我们都可以把部分代码抽取出来形成一个新的项目（便于管理）
+
+	4、maven最大的好处： 管理jar的存取方式
+	通过POM 进行管理
+		
+		GAV ： 
+		groupid   ： 公司或者组织等等  org.apache
+		artifactid   :  hadoop
+		version : 2.6.5
+
+		<dependency>
+			
+		</dependency>
+
+		仓库：jar包仓库
+
+		如果某个用户的某个项目需要用到该jar包，那么只需要在项目当中的pom.xml文件中
+		进行jar包的定位即可： 指定GAV坐标
+
+
+		maven仓库分三种：
+		1、中央仓库（又大又全，但是在国外，访问慢， 阿里出了一个镜像地址）
+		2、远程仓库（阿里镜像仓库：远程  国内的中央仓库）
+		3、本地仓库（存在于你本公司的仓库地址）
+		会安装maven
+		会创建maven工程
+		会配置pom.xml文件
+run as --->mave build	compile	对main进行编译
+run as --->maven test		运行src/test/java/下的test
+run as --->maven install	package	把项目打jar包放进本地mavenRepository中
+run as --->maven clean		清理项目
+
+第一种： java project  mvn package会把该工程打成一个jar包
+第二种:  web project  mvn package        war 包
+test case
+http://mvnrepository.com
+maven 中央工厂

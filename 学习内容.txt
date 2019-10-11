@@ -1,0 +1,77 @@
+数据结构
+java基础
+mysql
+jdbc
+linux
+mybatis
+spring
+spirngmvc
+ssm
+maven
+hadoop
+hdfs
+mapreduce
+hive
+zookeeper
+hadoopha搭建
+sqoop
+azkaban（Oozie）
+hbase
+flume
+nginx
+git			C:/Users/程都/Desktop/.git/
+	github		chengduhaha chengdu1994
+	tortoisegit
+	egit插件
+echarts
+
+
+还没学：CM软件，CDH,redis serverlet jsp,java成神之路，《java并发编程实战》
+
+
+环境
+
+<hadoop02 hadoop03 hadoop04 hadoop05>
+
+namenode :	hadoop02
+yarn:		hadoop04
+hive:		hadoop02 hadoop03 hadoop04 hadoop05
+hive-->mysql:	jdbc:mysql://hadoop04:3306/metastore_db_cd 
+zookeeper:	hadoop02 hadoop03 hadoop04 hadoop05
+		hadoop02 hadoop03 hadoop04---->leader/follower
+				   hadoop05---->observer
+
+myha01
+<hadoopha01 hadoopha02 hadoopha03 hadoopha04>
+
+namenode :	hadoopha01	hadoopha02
+datanode		hadoopha01 	hadoopha02 	hadoopha03 	hadoopha04
+yarn:		hadoopha03	hadoopha04
+hive:		hadoopha01
+hive-->mysql:	jdbc:mysql://localhost:3306/myhahive01	(hadoopha01)
+zookeeper:	hadoopha01 	hadoopha02 	hadoopha03 	hadoopha04
+		hadoopha01 	hadoopha02 	hadoopha03---->leader/follower
+				   				hadoopha04---->observer
+journalnode	hadoopha01 	hadoopha02 	hadoopha03
+zkfc		hadoopha01	hadoopha02	(与namenode相同)
+sqoop		hadoopha01
+azkaban		hadoopha01
+
+hbase	
+master:		hadoopha01	hadoopha02（standby）
+regionserver：	hadoopha01 	hadoopha02 	hadoopha03 	hadoopha04	(与datanode相同)
+flume：
+高可用Flume 的 Agent 和 Collector 分布如下表所示：
+名称 		Host 		角色
+Agent1 		hadoopha01	日志服务器
+Agent2 		hadoopha03 	日志服务器
+Agent3 		hadoopha04 	日志服务器
+Collector1 	hadoopha01 	AgentMaster1
+Collector1	hadoopha02 	AgentMaster2(热备)
+
+nginx		hadoopha01
+
+
+
+
+
