@@ -73,6 +73,3 @@ Collector1	hadoopha02 	AgentMaster2(热备)
 nginx		hadoopha01
 kafka		hadoopha01 	hadoopha02 	hadoopha03 	hadoopha04
 
-
-
-
