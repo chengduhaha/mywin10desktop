@@ -69,6 +69,17 @@ datanode新节点添加网址：https://www.cnblogs.com/unpro-mercy/p/11556467.html
 	tar -zxvf shuzhi.tar.gz
 	tar -zxvf apache-hive-1.2.1-bin.tar.gz -C apps/ 
 	rpm -ivh MySQL-server-5.6.26-1.linux_glibc2.5.x86_64.rpm
+==================================================================================
+git问题：
+$ git push origin master
+
+# 结果如下
+To github.com:hello/demo.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:hello/demo.git'
+
+执行：
+git pull --rebase origin master
 ===================================================================================
 问题：
 linux中导入txt表到mysql：             在linux中创建.sql文件的将表复制进去，用命令在mysql>source +.sql文件的路径 ？？
