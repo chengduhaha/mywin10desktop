@@ -1,4 +1,4 @@
-dos中：start /affinity 3 进程名称 		设置win核亲和力
+dos中：start /affinity 3 进程名称 	设置win核亲和力
 rz -e 				上传文件至linux
 cat /root/.mysql_secret		查看linux安装mysql初始密码
 [Ctrl + p], [Ctrl + n]			历史命令搜索操作快捷键
@@ -13,6 +13,9 @@ sed -e 's/\x01/,/g' +文件名		分隔\x01符替换为，
 
 eclipse自动生成返回值对象的那一行的末尾（注意一定要将光标点到最后），按Alt+Shift+L；
 eclipse	选中目标代码 按Alt+Shift+L    自动 try catch
+
+add import应该就是快捷键ctrl+shift+m的操作。
+organize imports应该是ctrl+shift+o的操作
 
 json可视化工具---------json viewer
 
