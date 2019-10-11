@@ -73,6 +73,3 @@ Collector1	hadoopha02 	AgentMaster2(»»±∏)
 nginx		hadoopha01
 
 
-
-
-
