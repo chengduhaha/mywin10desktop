@@ -1,5 +1,5 @@
-Êı¾İ½á¹¹
-java»ù´¡
+æ•°æ®ç»“æ„
+javaåŸºç¡€
 mysql
 jdbc
 linux
@@ -13,24 +13,24 @@ hdfs
 mapreduce
 hive
 zookeeper
-hadoopha´î½¨
+hadoophaæ­å»º
 sqoop
-azkaban£¨Oozie£©
+azkabanï¼ˆOozieï¼‰
 hbase
 flume
 nginx
-git			C:/Users/³Ì¶¼/Desktop/.git/
+git			C:/Users/ç¨‹éƒ½/Desktop/.git/
 	github		chengduhaha chengdu1994
 	tortoisegit
-	egit²å¼ş
+	egitæ’ä»¶
 echarts
 kafka
 
 
-»¹Ã»Ñ§£ºCMÈí¼ş£¬CDH,redis serverlet jsp,java³ÉÉñÖ®Â·£¬¡¶java²¢·¢±à³ÌÊµÕ½¡·
+è¿˜æ²¡å­¦ï¼šCMè½¯ä»¶ï¼ŒCDH,redis serverlet jsp,javaæˆç¥ä¹‹è·¯ï¼Œã€Šjavaå¹¶å‘ç¼–ç¨‹å®æˆ˜ã€‹
 
 ======================================================================
-»·¾³
+ç¯å¢ƒ
 
 <hadoop02 hadoop03 hadoop04 hadoop05>
 
@@ -54,23 +54,22 @@ zookeeper:	hadoopha01 	hadoopha02 	hadoopha03 	hadoopha04
 		hadoopha01 	hadoopha02 	hadoopha03---->leader/follower
 				   				hadoopha04---->observer
 journalnode	hadoopha01 	hadoopha02 	hadoopha03
-zkfc		hadoopha01	hadoopha02	(ÓënamenodeÏàÍ¬)
+zkfc		hadoopha01	hadoopha02	(ä¸namenodeç›¸åŒ)
 sqoop		hadoopha01
 azkaban		hadoopha01
 
 hbase	
-master:		hadoopha01	hadoopha02£¨standby£©
-regionserver£º	hadoopha01 	hadoopha02 	hadoopha03 	hadoopha04	(ÓëdatanodeÏàÍ¬)
-flume£º
-¸ß¿ÉÓÃFlume µÄ Agent ºÍ Collector ·Ö²¼ÈçÏÂ±íËùÊ¾£º
-Ãû³Æ 		Host 		½ÇÉ«
-Agent1 		hadoopha01	ÈÕÖ¾·şÎñÆ÷
-Agent2 		hadoopha03 	ÈÕÖ¾·şÎñÆ÷
-Agent3 		hadoopha04 	ÈÕÖ¾·şÎñÆ÷
+master:		hadoopha01	hadoopha02ï¼ˆstandbyï¼‰
+regionserverï¼š	hadoopha01 	hadoopha02 	hadoopha03 	hadoopha04	(ä¸datanodeç›¸åŒ)
+flumeï¼š
+é«˜å¯ç”¨Flume çš„ Agent å’Œ Collector åˆ†å¸ƒå¦‚ä¸‹è¡¨æ‰€ç¤ºï¼š
+åç§° 		Host 		è§’è‰²
+Agent1 		hadoopha01	æ—¥å¿—æœåŠ¡å™¨
+Agent2 		hadoopha03 	æ—¥å¿—æœåŠ¡å™¨
+Agent3 		hadoopha04 	æ—¥å¿—æœåŠ¡å™¨
 Collector1 	hadoopha01 	AgentMaster1
-Collector1	hadoopha02 	AgentMaster2(ÈÈ±¸)
+Collector1	hadoopha02 	AgentMaster2(çƒ­å¤‡)
 
 nginx		hadoopha01
 
-kafka		hadoopha01 	hadoopha02 	hadoopha03 	hadoopha04
-================================================================
+kafka		hadoopha01 	hadoopha02 	hadoopha03 	hadoopha04================================================================
