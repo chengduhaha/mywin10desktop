@@ -1,0 +1,73 @@
+json_tupple	解析多个 Json 字段
+===========================
+hive (default)> SELECT json_tuple('{"website":"www.iteblog.com","name":"过往记忆"}', 'website', 'name');
+
+www.iteblog.com 过往记忆
+
+
+get_json_object	解析1个 Json 字段
+============================
+
+hive (default)>  SELECT get_json_object('{"website":"www.iteblog.com","name":"过往记忆"}', '$.website');
+
+www.iteblog.com
+
+
+但是如果我们有个 Json 数组，json_tuple 和 get_json_object都无法处理
+
+explode	+  lateral view
+================================
+hive (default)> select explode(array('A','B','C'));
+OK
+A
+B
+C
+
+hive (default)> select explode(map('A',10,'B',20,'C',30));
+OK
+A 10
+B 20
+C 30
+
+
+regexp_replace
+=======================
+regexp_replace(1,2,3,4,5,6)
+语法说明：1：字段   2：替换的字段  3：替换成什么  4：起始位置（默认从1开始）  5：替换的次数（0是无限次）  6：不区分大小写
+
+|    city	|
+|======|
+| 我爱java	|
+| java爱我	|
+|    java	|
+
+select regexp_replace(city,'java','你',1,0,i);
+
+|    city	|
+|======|
+| 我爱你	|
+| 你爱我	|
+|    你	|
+
+regexp_extract
+
+
+
+
+[	{"website":	"www.iteblog.com",		"name":"		过往记忆"}, 
+	{"website":"	carbondata.iteblog.com",	"name":"		carbondata 中文文档"}]
+
+
+regexp_replace('[{"website":"www.iteblog.com",                              "name":"过往记忆"},
+		{"website":"carbondata.iteblog.com",               "name":"carbondata 中文文档"}]', '  {    ',     '       \\}\\;\\{             ')
+
+
+
+select json_tuple('{"website":"www.iteblog.com","name":"过往记忆"};{"website":"carbondata.iteblog.com","name":"carbondata 中文文档"}','website','name')
+
+
+
+select json_tuple(aa,'website','name') from (select explode(split('{"website":"www.iteblog.com","name":"过往记忆"};{"website":"carbondata.iteblog.com","name":"carbondata 中文文档"}','\\;' ))as aa) bb;
+json_to_array
+
+select json_to_array('{"website":"www.iteblog.com","name":"过往记忆"},{"website":"carbondata.iteblog.com","name":"carbondata 中文文档"}','website','name');
