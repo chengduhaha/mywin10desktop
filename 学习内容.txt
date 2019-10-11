@@ -1,5 +1,5 @@
-Êı¾İ½á¹¹
-java»ù´¡
+æ•°æ®ç»“æ„
+javaåŸºç¡€
 mysql
 jdbc
 linux
@@ -13,24 +13,24 @@ hdfs
 mapreduce
 hive
 zookeeper
-hadoopha´î½¨
+hadoophaæ­å»º
 sqoop
-azkaban£¨Oozie£©
+azkabanï¼ˆOozieï¼‰
 hbase
 flume
 nginx
-git			C:/Users/³Ì¶¼/Desktop/.git/
+git			C:/Users/ç¨‹éƒ½/Desktop/.git/
 	github		chengduhaha chengdu1994
 	tortoisegit
-	egit²å¼ş
+	egitæ’ä»¶
 echarts
 kafka
 
 
-»¹Ã»Ñ§£ºCMÈí¼ş£¬CDH,redis serverlet jsp,java³ÉÉñÖ®Â·£¬¡¶java²¢·¢±à³ÌÊµÕ½¡·
+è¿˜æ²¡å­¦ï¼šCMè½¯ä»¶ï¼ŒCDH,redis serverlet jsp,javaæˆç¥ä¹‹è·¯ï¼Œã€Šjavaå¹¶å‘ç¼–ç¨‹å®æˆ˜ã€‹
 
 
-»·¾³
+ç¯å¢ƒ
 
 <hadoop02 hadoop03 hadoop04 hadoop05>
 
@@ -54,261 +54,24 @@ zookeeper:	hadoopha01 	hadoopha02 	hadoopha03 	hadoopha04
 		hadoopha01 	hadoopha02 	hadoopha03---->leader/follower
 				   				hadoopha04---->observer
 journalnode	hadoopha01 	hadoopha02 	hadoopha03
-zkfc		hadoopha01	hadoopha02	(ÓënamenodeÏàÍ¬)
+zkfc		hadoopha01	hadoopha02	(ä¸namenodeç›¸åŒ)
 sqoop		hadoopha01
 azkaban		hadoopha01
 
 hbase	
-master:		hadoopha01	hadoopha02£¨standby£©
-regionserver£º	hadoopha01 	hadoopha02 	hadoopha03 	hadoopha04	(ÓëdatanodeÏàÍ¬)
-flume£º
-¸ß¿ÉÓÃFlume µÄ Agent ºÍ Collector ·Ö²¼ÈçÏÂ±íËùÊ¾£º
-Ãû³Æ 		Host 		½ÇÉ«
-Agent1 		hadoopha01	ÈÕÖ¾·şÎñÆ÷
-Agent2 		hadoopha03 	ÈÕÖ¾·şÎñÆ÷
-Agent3 		hadoopha04 	ÈÕÖ¾·şÎñÆ÷
+master:		hadoopha01	hadoopha02ï¼ˆstandbyï¼‰
+regionserverï¼š	hadoopha01 	hadoopha02 	hadoopha03 	hadoopha04	(ä¸datanodeç›¸åŒ)
+flumeï¼š
+é«˜å¯ç”¨Flume çš„ Agent å’Œ Collector åˆ†å¸ƒå¦‚ä¸‹è¡¨æ‰€ç¤ºï¼š
+åç§° 		Host 		è§’è‰²
+Agent1 		hadoopha01	æ—¥å¿—æœåŠ¡å™¨
+Agent2 		hadoopha03 	æ—¥å¿—æœåŠ¡å™¨
+Agent3 		hadoopha04 	æ—¥å¿—æœåŠ¡å™¨
 Collector1 	hadoopha01 	AgentMaster1
-Collector1	hadoopha02 	AgentMaster2(ÈÈ±¸)
+Collector1	hadoopha02 	AgentMaster2(çƒ­å¤‡)
 
 nginx		hadoopha01
-
-
-ÖªÊ¶µã¸´Ï°£¨kafkaÇ°£©
-	1¡¢±à³ÌÓïÑÔ£ºJavaSE
-		»ù´¡Óï·¨£ºËùÓĞ±à³ÌÓïÑÔ¶¼ÓĞµÄ
-				 ±äÁ¿/Êı¾İÀàĞÍ
-				 ¹æ·¶/×¢ÊÍ/»»ĞĞ/Ëõ½ø/±àÂë/.....
-				 ¹Ø¼ü×Ö
-				 Êı×é
-				 Á÷³Ì¿ØÖÆ
-				 ·½·¨\º¯ÊıµÄ¶¨ÒåºÍÊ¹ÓÃ
-
-				 String  StringBuilder  StringBuffer 
-
-				 String s1 = "huangbo"
-				 String s2 = "huangbo"
-				 String s3 = new String("huangbo");
-
-				 s1 ?= s2
-				 s1 ?= s3
-				 s1.equals(s2)
-				 s1.equals(s3)
-		ÃæÏò¶ÔÏó
-			³éÏó
-			·â×° + ¼Ì³Ğ + ¶àÌ¬
-		¼¯ºÏ
-		²¢·¢±à³Ì
-		ÍøÂç±à³Ì£º Á÷
-		·´Éä
-
-		Éè¼ÆÄ£Ê½ + OOAD + UML 
-	2¡¢JavaEE
-		mysql + sql + jdbc + mybatis
-		jsp  + css + html + jquery 
-		spring
-		linux
-
-		Spring:	IOC + AOP 
-		MyBatis: ORM 
-		SQL
-		
-	3¡¢´óÊı¾İ
-
-		HDFS
-		MapReduce
-		Hive
-		ZooKeeper
-		HBase
-
-	4¡¢¸¨Öú¹¤¾ß
-
-		flume
-		redis
-		sqoop
-		azkaban
-		kafka
-
-	ÄÜ½â¾öÊ²Ã´ÎÊÌâ£º
-
-	1¡¢Êı¾İµÄÊµÊ±ÔöÉ¾¸Ä²é£¬²»¹ÜÊÇ´óÊı¾İÁ¿»¹ÊÇĞ¡Êı¾İÁ¿
-		mysql + hbase + redis
-
-		¸÷ÖÖ²éÑ¯Ğ§ÂÊ¸ßµÄ´ëÊ©µÄÈÚºÏ
-
-		1¡¢Ê÷  Êı¾İ¿âµÄË÷Òı
-		2¡¢ÕÛ°ë²éÑ¯   
-		3¡¢ÄÚ´æ+´ÅÅÌ £º  WAL
-		4¡¢²¼Â¡¹ıÂËÆ÷
-	
-	2¡¢ÒµÎñ³ÌĞòµÄ¿ª·¢
-
-		JavaEEµÄÈı´ú¿ª·¢Ä£Ê½£º
-
-		1¡¢´¿Servlet
-			Servlet + JSP£º ÒµÎñÂß¼­ºÍÊı¾İÊÓÍ¼Õ¹Ê¾»®·Ö
-		2¡¢¼Ü¹¹Ä£Ê½£ºMVC
-			DAO
-			Service
-			Controller
-
-			Model  View  Controller
-		3¡¢Î¢·şÎñ
-			Dubbo + SpringCloud
-
-		
-		³£¼ûµÄºóÌ¨¹ÜÀíÏµÍ³£ºCMS¡¢ERP¡¢OA¡¢CRM
-		P2P¡¢O2O¡¢P2C¡¢B2C¡¢B2B¡¢C2C
-
-		´óÊı¾İ³¡¾°ÖĞµÄÀëÏßÊı¾İ´¦Àí
-			²ÉÓÃÍ¨ÓÃµÄMapReduce´óÊı¾İ¼¯µÄ¼ÆËãÒıÇæ
-			´óÊı¾İ³¡¾°ÖĞµÄ´óÊı¾İ¼¯µÄ´æ´¢:HDFS
-
-
-	CDO 
-		Common Data Object   
-
-			PO
-			VO   View Object
-			DTO	 Data Transaction Object
-			POJO
-			....
-
-		ÔÚ¹¤×÷ÖĞ£¬´ÓÆäËûµÄÏîÄ¿ÎüÊÕµÄ±È½ÏºÃµÄ±à³ÌË¼ÏëºÍË¼Î¬
-
-	Éè¼ÆÄ£Ê½
-
-
-	ÀëÏßÏîÄ¿£º
-
-		XXµçÉÌÆ½Ì¨µÄÓÃ»§ĞĞÎª·ÖÎöÏµÍ³
-
-		ÏîÄ¿µÄ¼ÛÖµ
-		ÏîÄ¿ÖĞµÄ¼Ü¹¹ºÍÊı¾İ´¦ÀíÁ÷³Ì
-		ºËĞÄÖ¸±ê
-
-		Êı¾İµÄÉú³ÉºÍ²É¼¯
-		Êı¾İµÄ´æ´¢ºÍ¼ÆËã
-		Êı¾İµÄÇ¨ÒÆºÍ¿ÉÊÓ»¯Õ¹Ê¾
-
-		Ô¤´¦Àí
-		¸÷ÖÖºËĞÄÖ¸±êµÄSQLÓï¾äÊµÏÖ
-
-	ÍÆ¼öÏµÍ³
-	ÓÃ»§»­Ïñ
-		»úÆ÷Ñ§Ï°
-
-	ËÑË÷ÒıÇæ
-		ES
-
-	
-	ÖØµã£º
-		linux£ºÊìÁ·Ê¹ÓÃ
-		java: ÄÜ¶à¾«Í¨¾Í¶à¾«Í¨
-		sql£º±àĞ´ + ÓÅ»¯ + Êı¾İ¿âµÄÆäËû¸ß¼¶Ê¹ÓÃ²ßÂÔ£¨·Ö¿â·Ö±í£¬¶ÁĞ´·ÖÀë£¬binlogµÄ½âÎö£¬Ë÷Òı£¬´æ´¢¹ı³ÌºÍ´¥·¢Æ÷£¬ÊÂÎñ£¬Èı´ó·¶Ê½£©
-	
-		Èı¸öÃæÊÔÌâ
-
-		1¡¢Çó TopN
-		2¡¢Çó ½»¼¯
-		3¡¢¿ìËÙÅĞ¶ÏÒ»¸öÔªËØÊÇ·ñ´æÔÚÓÚÒ»¸ö´óÊı¾İ¼¯ÖĞ
-
-		Ë¼Ïë£º
-
-		1¡¢·Ö¶øÖÎÖ®
-		2¡¢Êı¾İ·ÖÇøµÄË¼Â·
-			hash
-			Ëæ»ú
-			·¶Î§
-		3¡¢¼ÆËãµÄÄ£Ê½
-		4¡¢·Ö²¼Ê½µÄÏà¹ØË¼Ïë
-
-			·Ö²¼Ê½Ò»ÖÂĞÔËã·¨µÄÊµÏÖË¼Â·£º
-				1¡¢ÊÂÎñ
-				2¡¢·Ö²¼Ê½ÊÂÎñ£º2PC + 3PC
-				3¡¢WRN£º W + R > N  
-				4¡¢paxosËã·¨
-
-		Êı¾İÇãĞ±£º¸ºÔØ²»¾ùºâ
-		¸ºÔØ¾ùºâ£ºÊı¾İ²»ÇãĞ±
-
-		ÇãĞ±£º´æ´¢  + ¼ÆËã
-
-		¼¯ÈºµÄ¼Ü¹¹£º
-		1¡¢Ö÷´Ó¼Ü¹¹
-		2¡¢¶ÔµÈ¼Ü¹¹
-
-		´æ´¢ºÍ¼ÆËã£º
-
-		1¡¢´æ´¢£º
-			ÕæÊµÊı¾İ	Êı¾İ½Úµã
-			ÔªÊı¾İ		ºËĞÄ½Úµã
-		2¡¢¼ÆËã
-			Ö÷¿ØĞ­µ÷³ÌĞò    MRAppMaster
-			Ğ¡ÈÎÎñ		MapTask/ReduceTask
-
-		ÊØ»¤½ø³Ì£º
-
-		1¡¢HDFS£º  namenode + datanode
-		2¡¢YARN£º  resourcemanager + nodemanager
-		3¡¢hbase:  master + regionserver
-
-		¹ØÓÚ¶ÔµÈ¼Ü¹¹£º
-
-		1¡¢zookeeper
-			leader + follower 
-			quorum ÒéÔ±
-		2¡¢kafka
-		3¡¢es
-
-			ÔÚ¶ÔµÈ¼Ü¹¹ÖĞ£¬ÔÚ¼¯ÈºµÄ°²×°ºÍ³õÊ¼»¯µÄÊ±ºò£¬²»»áÖ¸¶¨µ½µ×Ë­ÊÇÖ÷½Úµã
-			Ò²²»»á¹ØĞÄÔÚÔËĞĞ¹ı³ÌÖĞÖ÷½ÚµãÊÇ·ñå´»ú
-
-			ÒòÎªÕâ¸öËùÎ½µÄÖ÷½Úµã¶¼ÊÇÑ¡¾Ù³öÀ´µÄ¡£
-
-		
-		ÓÅ»¯£º
-
-		1¡¢´úÂë¿ª·¢µÄÓÅ»¯
-		2¡¢Êı¾İÇãĞ±µÄÓÅ»¯
-		3¡¢×ÊÔ´µ÷ÓÅ
-		4¡¢shuffleµ÷ÓÅ£¨¼ÆËã£©
-
-		¼¯ÈºÔËÎ¬Ïà¹ØµÄÎÊÌâ
-
-		¸ºÔØ¾ùºâ£º
-		1¡¢½Úµã
-		2¡¢´ÅÅÌ
-			ÔõÃ´×öÄØ£¿
-
-		Èç¹ûÊ¹ÓÃÁËHDFS×öÊı¾İ´æ´¢ÏµÍ³£¬ÄÇÃ´ÊÇ·ñ»¹ĞèÒª×ö´ÅÅÌÕóÁĞÄØ£¿
-
-	
-	21Ìì¶¨ÂÉ
-		3ÌìĞ¡¸´Ï°
-		7Ìì´ó¸´Ï°
-		21Ìì¼Ç×¡ÁËÒ»¸ö¼¼Êõµã
-
-	²»ÓÃ¾ÍÍüÁË
-
-		python
-		java
-		scala 
-		r
-
-	SQL  HQL
-
-		´¿¹¦ÄÜĞÔµÄ£º ¿ª·¢Ò»¸öHDFS
-
-	¿ª·¢Ò»¸ö¸úÓÃ»§´ò½»µÀ¸øÓÃ»§Ê¹ÓÃµÄÏµÍ³
-
-
-	×Ü½áµÄ½«À´µÄ¼¼ÊõºÍ¿ª·¢·¢Õ¹Ç÷ÊÆ£º
-	
-		Stream + UI + SQL
-
-		Java + SQL + ´óÊı¾İµÄÏà¹ØË¼Î¬
-
-		shuffle Êı¾İÇãĞ± 
+kafka		hadoopha01 	hadoopha02 	hadoopha03 	hadoopha04
 
 
 
