@@ -24,6 +24,7 @@ git			C:/Users/程都/Desktop/.git/
 	tortoisegit
 	egit插件
 echarts
+kafka
 
 
 还没学：CM软件，CDH,redis serverlet jsp,java成神之路，《java并发编程实战》
