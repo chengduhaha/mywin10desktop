@@ -21,6 +21,17 @@ json可视化工具---------json viewer
 
 windows快速重启	开打任务管理器 关闭explorer.exe进程 左上角文件---运行新任务---输入explorer
 ===============================================================
+java 增强
+
+forEach 替代了增强for循环
+
+实例：
+Collection<Integer> c = new ArrayList<>();
+for( int i = 0 ; i<99 ; i++ ){
+	c.add(i);
+}
+c.forEach(System.out::println);			//forEach + 方法引用
+===============================================================
 hadoop克隆多个虚拟机配置：
 	vi /etc/sysconfig/network-scripts/ifcfg-eth0  编辑网卡配置文件
 	vi /etc/sysconfig/network  		修改主机名 
