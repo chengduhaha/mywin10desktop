@@ -20,6 +20,12 @@ organize imports应该是ctrl+shift+o的操作
 json可视化工具---------json viewer
 
 windows快速重启	开打任务管理器 关闭explorer.exe进程 左上角文件---运行新任务---输入explorer
+
+IDEA
+psvm		main方法快捷键
+.var+回车 	自动生成变量名来接收
+
+https://mirrors.tuna.tsinghua.edu.cn/apache/		清华软件下载地址
 ===============================================================
 java 增强
 

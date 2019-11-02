@@ -234,3 +234,14 @@
 		Java + SQL + 大数据的相关思维
 
 		shuffle 数据倾斜 
+
+
+	主		从
+	namenode	datanode
+	resourcemanager	nodemanager
+	hmaster		hregionserver
+	master		worker
+	nimbus		supervisor
+	主节点		从节点
+	管理者节点	工作者节点
+	大师		奴隶
